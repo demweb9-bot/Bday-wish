@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Times New Roman is a system font, so no import needed -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background-animated"></div>
+  <div id="sparkles-container"></div>
+  <div class="balloon-container"></div>
+
+  <!-- Gift Box Animation Start -->
+  <div class="gift-wrapper">
+    <div class="gift-box" onclick="openGift(this)">
+      <div class="lid"></div>
+      <div class="box"></div>
+      <div class="ribbon"></div>
+      <div class="sparkle-group" id="gift-sparkles"></div>
+    </div>
+    <div class="gift-message" id="gift-message">
+      Happy Birthday! 🎁<br>
+      May your day be full of surprises!
+    </div>
+  </div>
+  <!-- Gift Box Animation End -->
+
+  <div class="container">
+    <h1>🎉 Happy Birthday, <span id="name">Aahana</span>! 🎂</h1>
+    <p>Wishing you a fantastic year filled with joy, laughter, and amazing memories!</p>
+    <button class="animated-btn" onclick="toggleConfetti()">Celebrate!</button>
+    <canvas id="confetti-canvas"></canvas>
+    <audio id="confetti-audio" src="https://cdn.pixabay.com/audio/2022/03/15/audio_115b6b2e16.mp3"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
