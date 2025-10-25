@@ -1,0 +1,120 @@
+.gift-wrapper {
+  position: relative;
+  width: 140px;
+  margin: 30px auto 0 auto;
+  z-index: 20;
+  text-align: center;
+}
+
+.gift-box {
+  width: 120px;
+  height: 140px;
+  position: relative;
+  margin: 0 auto;
+  cursor: pointer;
+  animation: giftBounce 2s infinite;
+}
+
+.lid {
+  position: absolute;
+  width: 120px;
+  height: 40px;
+  background: #fd6e6a;
+  border-radius: 10px 10px 8px 8px;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transition: transform 0.6s cubic-bezier(.23,1.5,.32,1), box-shadow 0.3s;
+  box-shadow: 0 8px 10px rgba(253,110,106,0.12);
+}
+
+.box {
+  position: absolute;
+  width: 120px;
+  height: 100px;
+  background: #fff6b7;
+  border-radius: 0 0 15px 15px;
+  top: 40px;
+  left: 0;
+  z-index: 1;
+  box-shadow: 0 12px 18px rgba(253,110,106,0.16);
+}
+
+.ribbon {
+  position: absolute;
+  top: 40px;
+  left: 54px;
+  width: 12px;
+  height: 100px;
+  background: #f6d365;
+  border-radius: 6px;
+  z-index: 3;
+}
+.ribbon::before {
+  content: "";
+  position: absolute;
+  left: -42px;
+  top: -37px;
+  width: 104px;
+  height: 12px;
+  background: #f6d365;
+  border-radius: 6px;
+}
+
+@keyframes giftBounce {
+  0%,100% { transform: scale(1) translateY(0); }
+  30% { transform: scale(1.05) translateY(-8px);}
+  50% { transform: scale(0.95) translateY(3px);}
+  80% { transform: scale(1.03) translateY(-4px);}
+}
+
+.gift-box.open .lid {
+  transform: rotateX(70deg) translateY(-24px) scale(1.08);
+  box-shadow: 0 32px 12px rgba(253,110,106,0.18);
+}
+
+.gift-message {
+  display: none;
+  opacity: 0;
+  font-size: 1.2rem;
+  background: #fff6b7;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(253,110,106,0.16);
+  padding: 18px 12px;
+  margin-top: 12px;
+  animation: fadeInGiftMsg 1.2s forwards;
+  font-family: 'Times New Roman', Times, serif;
+}
+.gift-wrapper .gift-message.show {
+  display: block;
+  opacity: 1;
+}
+
+@keyframes fadeInGiftMsg {
+  0% { opacity: 0; transform: scale(0.8) translateY(30px);}
+  100% { opacity: 1; transform: scale(1) translateY(0);}
+}
+
+/* Sparkles for gift */
+.sparkle-group {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 100px;
+  height: 40px;
+  pointer-events: none;
+  z-index: 9;
+}
+.gift-sparkle {
+  position: absolute;
+  width: 14px; height: 14px;
+  background: radial-gradient(circle, #fff 60%, transparent 100%);
+  opacity: 0.85;
+  border-radius: 50%;
+  animation: giftSparklePop 0.9s ease-out;
+}
+@keyframes giftSparklePop {
+  0% { opacity: 0; transform: scale(0.4);}
+  60% { opacity: 1; transform: scale(1.3);}
+  100% { opacity: 0.7; transform: scale(1);}
+}
